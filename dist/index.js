@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LocaleCode639_3 = exports.LocaleCode639_2T = exports.LocaleCode639_2B = exports.LocaleCode639_1 = exports.getCodesByEnglishName = exports.getNativeName = exports.getEnglishName = exports.getLocaleData = void 0;
+exports.LocaleCode639_3 = exports.LocaleCode639_2T = exports.LocaleCode639_2B = exports.LocaleCode639_1 = exports.Iso639 = exports.getCodesByEnglishName = exports.getNativeName = exports.getEnglishName = exports.getLocaleData = void 0;
 const Iso639_1 = require("./data/Iso639");
+Object.defineProperty(exports, "Iso639", { enumerable: true, get: function () { return Iso639_1.Iso639; } });
 const LocaleCode639_1_1 = require("./data/LocaleCode639-1");
 Object.defineProperty(exports, "LocaleCode639_1", { enumerable: true, get: function () { return LocaleCode639_1_1.LocaleCode639_1; } });
 const LocaleCode639_2B_1 = require("./data/LocaleCode639-2B");
