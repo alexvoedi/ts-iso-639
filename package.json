@@ -1,0 +1,40 @@
+{
+  "name": "@alexvoedi/ts-iso-639",
+  "version": "0.9.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/alexvoedi/ts-iso-639",
+  "bugs": "https://github.com/alexvoedi/ts-iso-639",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexvoedi/ts-iso-639"
+  },
+  "author": {
+    "name": "Alexander Vödisch",
+    "email": "voedisch.alexander@gmail.com"
+  },
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "generate": "ts-node scripts/generate.ts",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.0",
+    "@types/node": "^17.0.39",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+    "jest": "^28.1.0",
+    "node-fetch": "^3.2.5",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.4",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}

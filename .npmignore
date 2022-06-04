@@ -1,0 +1,8 @@
+node_modules/
+src/
+test/
+build/test
+.eslintrc
+.gitignore
+.jest.config.js
+tsconfig.json
