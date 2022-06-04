@@ -35,4 +35,10 @@ export const getCodesByEnglishName = (englishName: string) => {
   return Iso639.find((locale) => locale.englishName === englishName);
 };
 
-export { LocaleCode639_1, LocaleCode639_2B, LocaleCode639_2T, LocaleCode639_3 };
+export {
+  Iso639,
+  LocaleCode639_1,
+  LocaleCode639_2B,
+  LocaleCode639_2T,
+  LocaleCode639_3,
+};
