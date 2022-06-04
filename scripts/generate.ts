@@ -38,38 +38,30 @@ type Iso639 = {
       return cols[3];
     })
     .map((row) => {
-      const cols = row.split("\t");
+      const [iso639_3, iso639_2b, iso639_2t, iso639_1] = row.split("\t");
 
       return {
-        "639-3": cols[0],
-        "639-2B": cols[1],
-        "639-2T": cols[2],
-        "639-1": cols[3],
-        nativeName: null,
-        englishName: cols[6],
+        "639-3": iso639_3,
+        "639-2B": iso639_2b,
+        "639-2T": iso639_2t,
+        "639-1": iso639_1,
+        nativeName:
+          new Intl.DisplayNames(iso639_1, {
+            type: "language",
+          }).of(iso639_1) ?? null,
+        englishName:
+          new Intl.DisplayNames("en", {
+            type: "language",
+          }).of(iso639_1) ?? null,
       };
-    });
-
-  data.forEach((d) => {
-    const lang = d["639-1"];
-
-    if (lang) {
-      d.nativeName =
-        new Intl.DisplayNames(lang, {
-          type: "language",
-        }).of(lang) ?? null;
-
-      d.englishName =
-        new Intl.DisplayNames("en", {
-          type: "language",
-        }).of(lang) ?? null;
-    }
-  });
+    })
+    .sort((a, b) => a["639-1"].localeCompare(b["639-1"]));
 
   fs.writeFileSync(
     `${dir}/Iso639.ts`,
     `import { TIso639 } from "../TIso639";
-     export const Iso639 = ${JSON.stringify(data, null, 2)} as TIso639[]`
+
+export const Iso639 = ${JSON.stringify(data, null, 2)} as TIso639[]`
   );
 
   const values_639_1 = data
